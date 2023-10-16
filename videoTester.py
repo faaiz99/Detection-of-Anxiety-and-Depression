@@ -11,6 +11,8 @@ def exp():
 
 
     face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+
     cap=cv2.VideoCapture(0)
     count_anx=0
     count_desp=0
@@ -53,7 +55,7 @@ def exp():
         cv2.imshow('Facial emotion analysis ',resized_img)
         cv2.setWindowProperty("Facial emotion analysis ", cv2.WND_PROP_TOPMOST, 1)
 
-        if cv2.waitKey(10) == ord('q'): #wait until 'q' key is pressed
+        if cv2.waitKey(10) == ord('q'):#wait until 'q' key is pressed
             if count_anx>count_desp:
                 if count_anx>count_desp:
                     res='Anxious'
