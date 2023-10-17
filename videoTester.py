@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from keras.models import model_from_json
 from keras.preprocessing import image
+import keras.utils as image
 def exp():
     #load model
     model = model_from_json(open("fer.json", "r").read())
@@ -58,14 +59,16 @@ def exp():
         if cv2.waitKey(10) == ord('q'):#wait until 'q' key is pressed
             if count_anx>count_desp:
                 if count_anx>count_desp:
-                    res='Anxious'
+                    percent = (count_anx/count_normal)*100
+                    res= str(percent)+ 'Anxious'
                 else:
                     res='Normal'
             else:
                 if count_normal>count_desp:
                     res='Normal'
                 else:
-                    res='Depressed'
+                    percent = (count_desp/count_normal)*100
+                    res=str(percent)+'Depressed'
             return res
             break
 
