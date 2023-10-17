@@ -1,17 +1,26 @@
--Python Version 3.10
+# Mind Care
 
--Create a Enviornment
-py -3 -m venv .venv
+A brief description of your project.
 
--Activate Virtual Enviornment
-.venv\Scripts\activate
+## Table of Contents
 
--Run Flask App
-flask run
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
--Upgrade Pip
+## Prerequisites
+
+- Python Version 3.10
+
+Before you begin, ensure you have met the following requirements:
+
+- **Python 3.10**: Make sure you have Python 3.10 installed on your system.
+
+Upgrade your `pip` to the latest version:
+```bash
 python -m pip install --upgrade pip
 
--Generate requirements.txt
-pip freeze > requirements. txt
-
+pip freeze > requirements.txt
