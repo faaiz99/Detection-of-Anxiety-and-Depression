@@ -1,9 +1,6 @@
-Certainly! Here's a complete README text for your project:
-
-```markdown
 # Mind Care
 
-Mind Care is a [brief description of your project]. It aims to [mention the primary goal or purpose of your project].
+Your mental health is our priority
 
 ## Table of Contents
 
@@ -25,7 +22,7 @@ To get started, ensure you have the necessary prerequisites:
   python -m pip install --upgrade pip
   ```
 
-- Generate a `requirements.txt` file: [NOT REQUIRED]
+- Generate a `requirements.txt` file: [NOT REQUIRED IF CLONING]
   ```bash
   pip freeze > requirements.txt
   ```
@@ -56,19 +53,11 @@ To run the project, use the following command:
 flask run
 ```
 
-[Add any other details about how to use your project here.]
-
-## Contributing
-
-If you'd like to contribute to this project, please follow our [Contribution Guidelines](CONTRIBUTING.md).
-
 ## License
 
-This project is licensed under the [Your License Name]. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the COMSATS Islamabad Islamabad. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 For any questions or feedback, feel free to reach out to [Your Email Address].
 ```
-
-You can copy and paste this README text into your project's README.md file on GitHub. Be sure to replace the placeholders in square brackets with your project-specific information, and include a `LICENSE` file and a `CONTRIBUTING.md` file if needed.
