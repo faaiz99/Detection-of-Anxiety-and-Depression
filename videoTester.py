@@ -10,7 +10,6 @@ def exp():
     #load weights
     model.load_weights('fer.h5')
 
-
     face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
@@ -59,16 +58,16 @@ def exp():
         if cv2.waitKey(10) == ord('q'):#wait until 'q' key is pressed
             if count_anx>count_desp:
                 if count_anx>count_desp:
-                    percent = (count_anx/count_normal)*100
-                    res= str(percent)+ 'Anxious'
+                    percent = round((count_anx/count_normal),2)*100
+                    res= str(percent)+ '% Anxious'
                 else:
                     res='Normal'
             else:
                 if count_normal>count_desp:
                     res='Normal'
                 else:
-                    percent = (count_desp/count_normal)*100
-                    res=str(percent)+'Depressed'
+                    percent = round((count_desp/count_normal),2)*100
+                    res=str(percent)+'% Depressed'
             return res
             break
 
