@@ -7,7 +7,6 @@ import cv2
 from keras.models import model_from_json
 from keras.preprocessing import image
 import keras.utils as image
-
 app = FastAPI()
 
 model = model_from_json(open("fer.json", "r").read())
