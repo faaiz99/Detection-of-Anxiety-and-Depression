@@ -2,16 +2,13 @@ from typing import Union
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
 from typing import List
-import os
 import numpy as np
 import cv2
 from keras.models import model_from_json
 from keras.preprocessing import image
 import keras.utils as image
 
-
 app = FastAPI()
-
 
 model = model_from_json(open("fer.json", "r").read())
 #load weights
@@ -52,23 +49,6 @@ async def process_image(files: List[UploadFile] = File(...)):
                 predicted_emotion = emotions[max_index]
 
             return predicted_emotion
-            blob = cv2.dnn.blobFromImage(image_cv2, 1 / 255.0, (416, 416), swapRB=True, crop=False)
-
-            network.setInput(blob)
-
-            output_from_network = network.forward(layers_names_output)
-
-            for result in output_from_network:
-                for detection in result:
-                    scores = detection[5:]
-                    class_current = np.argmax(scores)
-
-
-                    confidence_current = scores[class_current]
-
-
-                    if confidence_current > probability_minimum:
-                        results.append(labels[int(class_current)])
         except Exception as e:
             results.append(str(e))
             

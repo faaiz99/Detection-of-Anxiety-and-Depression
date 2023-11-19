@@ -50,7 +50,7 @@ Follow these steps to install the project on your local machine:
 
 To run the project, use the following command:
 ```bash
-flask run
+uvicorn API:app --reload 
 ```
 
 ## License
