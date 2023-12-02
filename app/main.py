@@ -8,6 +8,10 @@ import cv2
 from keras.models import model_from_json
 from keras.preprocessing import image
 import keras.utils as image
+model = model_from_json(open("app/fer.json", "r").read())
+#load weights
+model.load_weights('app/fer.h5')
+face_haar_cascade = cv2.CascadeClassifier('app/haarcascade_frontalface_default.xml')
 
 origins = ["*"]
 methods = ["*"]
@@ -23,10 +27,7 @@ app.add_middleware(
     allow_headers = headers    
 )
 
-model = model_from_json(open("fer.json", "r").read())
-#load weights
-model.load_weights('fer.h5')
-face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
 
 
 
