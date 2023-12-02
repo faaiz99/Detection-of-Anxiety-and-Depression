@@ -1,13 +1,27 @@
 from typing import Union
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import numpy as np
 import cv2
 from keras.models import model_from_json
 from keras.preprocessing import image
 import keras.utils as image
+
+origins = ["*"]
+methods = ["*"]
+headers = ["*"]
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware, 
+    allow_origins = origins,
+    allow_credentials = True,
+    allow_methods = methods,
+    allow_headers = headers    
+)
 
 model = model_from_json(open("fer.json", "r").read())
 #load weights
@@ -15,8 +29,10 @@ model.load_weights('fer.h5')
 face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
+
 @app.post("/process_image/")
 async def process_image(files: List[UploadFile] = File(...)):
+    print(files)
     if not files:
         raise HTTPException(status_code=400, detail="No file provided")
 
