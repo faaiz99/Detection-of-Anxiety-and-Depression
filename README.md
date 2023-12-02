@@ -61,4 +61,5 @@ This project is licensed under the COMSATS Islamabad Islamabad. See the [LICENSE
 
 For any questions or feedback, feel free to reach out to faaizaslam75@live.com.
 
- docker build -t fastapi-app .
+ docker build -t ftest-image.
+sudo docker run -p 8000:8000 test-image
