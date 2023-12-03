@@ -3,6 +3,7 @@ tensorflow
 keras
 numpy
 fastapi
+gunicorn
 fcntl
 pydantic
 opencv-python
