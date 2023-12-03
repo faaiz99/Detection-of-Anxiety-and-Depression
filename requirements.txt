@@ -3,6 +3,7 @@ tensorflow
 keras
 numpy
 fastapi
+fcntl
 pydantic
 opencv-python
 python-multipart
