@@ -61,5 +61,6 @@ This project is licensed under the COMSATS Islamabad Islamabad. See the [LICENSE
 
 For any questions or feedback, feel free to reach out to faaizaslam75@live.com.
 
-docker build -t test-image.
+docker build -t test-image .
 sudo docker run -p 8000:8000 test-image
+gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
